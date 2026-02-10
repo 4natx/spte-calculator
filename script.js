@@ -1,3 +1,5 @@
+const announce = ``
+
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
@@ -16,6 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    if (announce != ``) {
+        let anBar = document.querySelector('.announcement-holder')
+        if (anBar) {
+            anBar.className = `announcement-bar`
+            anBar.textContent = announce
+        }
+    }
 
     // Add scroll effect to header and announcement
     const header = document.querySelector('.header');
@@ -127,5 +137,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return num.toString();
     };
-    console.log('SPTS Wiki loaded successfully!');
+    console.log('SPT: Endless loaded successfully!');
 });
