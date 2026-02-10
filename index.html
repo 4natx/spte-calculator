@@ -1,0 +1,244 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="footer.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="script.js"></script>
+        <script src="site-settings.js"></script>
+        <script src="calculator.js"></script>
+    </head>
+    <body>
+        <div class="container loaded" bis_skin_checked="1">
+            <!-- Header -->
+        <header class="header" style="transform: translateY(0px);">
+        <div class="header-content" bis_skin_checked="1">
+            <div class="logo" bis_skin_checked="1">
+                <div class="logo-text" bis_skin_checked="1">
+                    <h1>SPT: Endless</h1>
+                    <p>Super Power Training: Endless</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <!-- <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/index" class="active">Home</a></li> -->
+                    <!-- <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/npcslist">NPCs</a></li>
+                    <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/skills">Skills</a></li>
+                    <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/currencies">Currencies</a></li>
+                    <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/locations">Locations</a></li>
+                    <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/training-zones">Training Zones</a></li>
+                                            
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Game Features <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/gamefeatures/squads">Squads</a></li>
+                            <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/gamefeatures/races">Races</a></li>
+                            <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/gamefeatures/ranks">Ranks</a></li>
+                            <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/gamefeatures/codes">Codes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/web/20251003182424/https://wiki.eclipseinfo.xyz/credits">Credits</a></li>
+                    <li><a href="#" id="background-theme-toggle" title="Switch to dark background"><i class="fas fa-paint-brush"></i></a></li>
+                    <li><a href="#" id="particle-theme-toggle" title="Switch particle effect"><i class="fas fa-atom"></i></a></li> -->
+                </ul>
+            </nav>
+        </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="main-content"> 
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content" bis_skin_checked="1">
+                <h2>Welcome to the SPT: Endless Calculator</h2>
+                <!-- <p>created by jdl0525</p> -->
+                <div class="hero-stats" bis_skin_checked="1">
+                    <div class="stat" bis_skin_checked="1" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <i class="fas fa-calendar"></i>
+                        <span>Last Updated: <strong>Update 9</strong></span>
+                    </div>
+                    <!-- <div class="stat" bis_skin_checked="1" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <i class="fas fa-eye"></i>
+                        <span>Visits: <strong><span id="visitCount">11592</span></strong></span>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Navigation -->
+        <!-- <section class="quick-nav">
+            <h3><i class="fas fa-compass"></i> Quick Navigation</h3>
+            <div class="nav-grid" bis_skin_checked="1">
+                <a href="npcslist.php" class="nav-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <i class="fas fa-users"></i>
+                    <h4>NPCs</h4>
+                    <p>Find all NPCs and their quests</p>
+                </a>
+                <a href="skills.php" class="nav-card" style="opacity: 1; transform: translateY(0px) scale(1); transition: opacity 0.6s, transform 0.6s;">
+                    <i class="fas fa-star"></i>
+                    <h4>Skills</h4>
+                    <p>Skills and abilities guide</p>
+                </a>
+                <a href="locations.php" class="nav-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Locations</h4>
+                    <p>Game world locations</p>
+                </a>
+            </div>
+        </section> -->
+        
+        <!-- Stat Calculator Section -->
+        <section class="calculator-section">
+            <div class="calculator-header" bis_skin_checked="1">
+                <h3><i class="fas fa-calculator"></i> Stat Calculator</h3>
+                <p>Calculate the time needed to reach your target stat</p>
+            </div>
+            <div class="calculator-layout" bis_skin_checked="1">
+                <div class="results-box" id="resultsBox" bis_skin_checked="1">
+                    <h4>Training Progress</h4>
+                    <div class="results-content" bis_skin_checked="1">
+                        <p class="results-placeholder">Enter your stats and click Calculate.</p>
+                    </div>
+                </div>
+                <div class="calculator-main" bis_skin_checked="1">
+                    <form class="calculator-form" id="calculatorForm">
+                        <div class="form-group" bis_skin_checked="1">
+                            <label for="skill">Skill</label>
+                            <div class="skill-buttons" bis_skin_checked="1">
+                                <button type="button" class="skill-button active" data-skill="FS">
+                                    <span class="skill-emoji">👊</span>
+                                    <span class="skill-name">FS</span>
+                                </button>
+                                <button type="button" class="skill-button" data-skill="BT">
+                                    <span class="skill-emoji">🛡️</span>
+                                    <span class="skill-name">BT</span>
+                                </button>
+                                <button type="button" class="skill-button" data-skill="PP">
+                                    <span class="skill-emoji">🧠</span>
+                                    <span class="skill-name">PP</span>
+                                </button>
+                                <button type="button" class="skill-button" data-skill="MS">
+                                    <span class="skill-emoji">⚡</span>
+                                    <span class="skill-name">MS</span>
+                                </button>
+                                <button type="button" class="skill-button" data-skill="JF">
+                                    <span class="skill-emoji">💪</span>
+                                    <span class="skill-name">JF</span>
+                                </button>
+                                <button type="button" class="skill-button" data-skill="TC">
+                                    <span class="skill-emoji">🪙</span>
+                                    <span class="skill-name">TC</span>
+                                </button>
+                                <button type="button" class="skill-button" data-skill="TPM">
+                                    <span class="skill-emoji">💀</span>
+                                    <span class="skill-name">TPM</span>
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="form-row" bis_skin_checked="1">
+                            <div class="form-group" bis_skin_checked="1">
+                                <label for="current">Current Stat</label>
+                                <input type="text" id="current" placeholder="e.g. 2.5M" required="">
+                            </div>
+                            <div class="form-group" bis_skin_checked="1">
+                                <label for="target">Target Stat</label>
+                                <input type="text" id="target" placeholder="e.g. 50M" required="">
+                            </div>
+                        </div>
+        
+                        <div class="form-group" bis_skin_checked="1">
+                            <label for="gain">Gain per Tick</label>
+                            <input type="text" id="gain" placeholder="e.g. 500K" required="">
+                        </div>
+        
+                        <button type="submit" class="calculate-btn">
+                            <span>Calculate</span>
+                            <div class="btn-glow" bis_skin_checked="1"></div>
+                        </button>
+                        <p class="calculator-note">
+                            Make sure the capitalization is correct for the prefixes or the calculation will not be accurate
+                        </p>
+                    </form>
+                </div>
+        
+                <div class="prefix-table" bis_skin_checked="1">
+                    <h4>Number Prefixes</h4>
+                    <div class="prefix-grid" id="prefixGrid" bis_skin_checked="1">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Rune Multiplier Calculator Section -->
+        <section class="rune-calculator-section">
+            <div class="calculator-header" bis_skin_checked="1">
+                <h3><i class="fas fa-gem"></i> Rune Multiplier Calculator</h3>
+                <p>Calculate expected TPM multiplier from your runes</p>
+            </div>
+            <div class="rune-calculator-layout" bis_skin_checked="1">
+                <div class="rune-results-box" id="runeResultsBox" bis_skin_checked="1">
+                    <h4>Expected Results</h4>
+                    <div class="rune-results-content" bis_skin_checked="1">
+                        <p class="results-placeholder">Enter your runes and click Calculate.</p>
+                    </div>
+                </div>
+                <div class="rune-calculator-main" bis_skin_checked="1">
+                    <form class="rune-calculator-form" id="runeCalculatorForm">
+                        <div class="form-group" bis_skin_checked="1">
+                            <label for="uniCoins">Universal Coins (Optional)</label>
+                            <input type="text" id="uniCoins" placeholder="e.g. 1.5K (1K = 3K runes)">
+                        </div>
+        
+                        <div class="form-group" bis_skin_checked="1">
+                            <label for="runeAmount">Current Runes</label>
+                            <input type="text" id="runeAmount" placeholder="e.g. 2.5M" required="">
+                        </div>
+        
+                        <button type="submit" class="calculate-btn rune-calculate-btn">
+                            <span>Calculate Rune Multiplier</span>
+                            <div class="btn-glow" bis_skin_checked="1"></div>
+                        </button>
+                        <p class="calculator-note">
+                            This calculator uses the most accurate earning ratio, but no calculation can be perfectly accurate
+                        </p>
+                    </form>
+                </div>
+        
+                <div class="rune-odds-table" bis_skin_checked="1">
+                    <h4>Roll Probabilities</h4>
+                    <div class="rune-odds-grid" id="runesGrid" bis_skin_checked="1"></div>
+                </div>
+            </div>
+        </section>
+        
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-content" bis_skin_checked="1">
+            <div class="footer-section" bis_skin_checked="1">
+                <h4>About This Site</h4>
+                <p>This is a calculator made for SPT: Endless</p>
+            </div>
+            <div class="footer-section" bis_skin_checked="1">
+                <h4>Credits</h4>
+                <p><i class="fab fa-discord"></i> jdl0525. - Original Website Creator</p>
+                <p><i class="fab fa-discord"></i> 4natx - Website Recreator</p>
+                <p>Website coded in HTML, CSS, and JavaScript</p>
+            </div>
+            <div class="footer-section" bis_skin_checked="1">
+                <h4>Links</h4>
+                <div class="footer-links" bis_skin_checked="1">
+                    <a href="https://discord.gg/MbXRqJQhQP" target="_blank">Official SPT: Endless Discord</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom" bis_skin_checked="1">
+            <p>© 2026 SPT: Endless Calculator. All rights reserved.</p>
+        </div>
+        </footer>
+        </div>
+    </body>
+</html>
