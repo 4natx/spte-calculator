@@ -95,6 +95,7 @@ class WikiStatCalculator {
 
     toNumber(str) {
         if (!str) return NaN;
+        if (str == "0") return 0;
         str = str.trim();
         const sortedSuffixes = [...this.suffixes].sort((a, b) => b.length - a.length);
         for (const suffix of sortedSuffixes) {
@@ -398,9 +399,13 @@ class WikiRuneCalculator {
         
         // Calculations
         const totalRolls = Math.floor(runeAmount / RUNES_PER_ROLL);
-        const expectedMultiplier = runeAmount * MULTIPLIER_PER_RUNE;
+        let expectedMultiplier = runeAmount * MULTIPLIER_PER_RUNE;
         const leftoverRunes = runeAmount % RUNES_PER_ROLL;
-        
+
+        if (totalRolls < 1) {
+            expectedMultiplier = 0;
+        }
+
         // Prepare input display based on source
         let inputDisplay = '';
         if (uniCoinsValue !== '') {
