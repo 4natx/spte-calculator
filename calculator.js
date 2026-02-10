@@ -162,7 +162,7 @@ class WikiStatCalculator {
                     </div>
                 </div>
                 <div class="progress-bar-container">
-                    <div class="progress-text">${this.formatNumber(current)} â†’ ${this.formatNumber(target)}</div>
+                    <div class="progress-text">${this.formatNumber(current)} -> ${this.formatNumber(target)}</div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 0%"></div>
                     </div>
