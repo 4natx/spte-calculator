@@ -13,7 +13,8 @@ class WikiStatCalculator {
             MS: 0.9,
             JF: 0.5,
             TC: 300,
-            TPM: 60
+            TPM: 60,
+            UC: 300,
         };
 
         this.suffixToMultiplier = {};
@@ -99,7 +100,7 @@ class WikiStatCalculator {
         str = str.trim();
         const sortedSuffixes = [...this.suffixes].sort((a, b) => b.length - a.length);
         for (const suffix of sortedSuffixes) {
-            if (!str.endsWith(suffix)) continue;
+            if (!str.toLowerCase().endsWith(suffix.toLowerCase())) continue;
             const num = parseFloat(str.slice(0, -suffix.length));
             if (!isNaN(num)) {
                 return num * this.suffixToMultiplier[suffix];
