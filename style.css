@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #474747 50%, #000000 100%);
+    background: linear-gradient(135deg, #000000 0%, #292929 50%, #000000 100%);
     color: #e0e0e0;
     line-height: 1.6;
     min-height: 100vh;
@@ -104,8 +104,6 @@ body.loading {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 3rem 0;
-    margin-bottom: 3rem;
 }
 
 .hero-content h2 {
@@ -1287,7 +1285,7 @@ body.loading {
 
 /* Calculator Styles */
 .calculator-section {
-    margin: 5rem 0 3rem 0;
+    margin: 1rem 0 0rem 0;
 }
 
 .calculator-header {
