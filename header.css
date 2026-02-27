@@ -7,7 +7,7 @@
     padding: 1rem 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     border-radius: 0 0 16px 16px;
-    margin: 0 1rem;
+    margin: 0 3rem;
 }
 
 .header.hidden {
@@ -23,6 +23,88 @@
     flex-wrap: wrap;
     gap: 1.3rem;
     padding: 0 14px;
+}
+
+.miniPlayer {
+    background: rgba(30, 58, 138, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    right: -6rem;
+    z-index: 1000;
+    padding: 1rem 0.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 0 0 16px 16px;
+}
+
+.disc {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+
+    background: radial-gradient(circle at center,
+        #1e3a8a 10%,
+        #0f172a 40%,
+        #020617 75%);
+
+    border: 2px solid rgba(100, 255, 218, 0.3);
+
+    box-shadow:
+        0 0 15px rgba(100, 255, 218, 0.25),
+        inset 0 0 15px rgba(0,0,0,0.8);
+
+    animation: spinDisc 6s linear infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.disc::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    background-image: url("logo.png");
+    background-size: cover;
+    background-position: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 2px solid rgba(100, 255, 218, 0.4);
+    box-shadow: 0 0 10px rgba(100,255,218,0.3);
+
+    z-index: 2;
+}
+
+.disc::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+/* Hover */
+.disc:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 25px rgba(100, 255, 218, 0.5),
+        inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* Pausado */
+.disc.paused {
+    animation-play-state: paused;
+    opacity: 0.7;
 }
 
 .logo {
@@ -327,3 +409,27 @@
 .stat.online-users strong {
     font-size: 1em;
 } 
+
+/* Animação */
+@keyframes spinDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .player {
+        right: 15px;
+        top: 85px;
+    }
+
+    .disc {
+        width: 60px;
+        height: 60px;
+    }
+
+    .disc::before {
+        width: 30px;
+        height: 30px;
+    }
+}

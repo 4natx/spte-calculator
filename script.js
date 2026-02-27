@@ -137,5 +137,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return num.toString();
     };
+
+    const disc = document.getElementById("disc");
+    const music = document.getElementById("bgMusic");
+
+    music.volume = 0.4;
+
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            disc.classList.add("paused");
+        });
+    }
+
+    disc.addEventListener("click", function () {
+        if (music.paused) {
+            music.play();
+            disc.classList.remove("paused");
+        } else {
+            music.pause();
+            disc.classList.add("paused");
+        }
+    });
+
     console.log('SPT: Endless loaded successfully!');
 });
